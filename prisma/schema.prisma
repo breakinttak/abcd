@@ -1,0 +1,23 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id        Int    @id
+  email     String @unique
+  userName  String @unique
+  isTeacher Int
+}
+
+model Group {
+  groupId      Int      @id @default(autoincrement())
+  groupName    String   @unique
+  groupMembers Int[]
+  createdBy    Int      @unique
+  createdAt    DateTime @default(now())
+}

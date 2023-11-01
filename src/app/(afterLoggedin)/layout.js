@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <>
       <ThemeProvider
         attribute="class"
         defaultTheme="system"
@@ -22,6 +22,6 @@ export default function RootLayout({ children }) {
           {children}
         </body>
       </ThemeProvider>
-    </html>
+    </>
   );
 }

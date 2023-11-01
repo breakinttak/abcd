@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Group" ALTER COLUMN "createdBy" SET DATA TYPE TEXT;

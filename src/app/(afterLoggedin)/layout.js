@@ -1,6 +1,8 @@
 import { Inter } from "next/font/google";
 import Navbar from "@/components/topNavbar";
 import { ThemeProvider } from "@/components/themes-provider";
+import LeftNavComp from "@/components/leftNavComponent";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -17,10 +19,11 @@ export default function RootLayout({ children }) {
         enableSystem
         disableTransitionOnChange
       >
-        <body className={inter.className}>
-          <Navbar />
+        <html className={inter.className}>
+          {/* <Navbar /> */}
+          <LeftNavComp />
           {children}
-        </body>
+        </html>
       </ThemeProvider>
     </>
   );

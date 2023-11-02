@@ -2,6 +2,7 @@
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/lib/prisma";
+import { redirect } from "next/navigation";
 const { getUser, isAuthenticated, getPermissions } =
   await getKindeServerSession();
 
@@ -21,9 +22,11 @@ const POST = async (req, res) => {
       groupName: data,
       createdBy: user.id,
       groupMembers: [user.id],
+      groupImage: "groupImage",
     },
   });
   console.log(newGroup);
+
   return NextResponse.json({ message: "request recieved" }, { status: 200 });
 };
 

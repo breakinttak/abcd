@@ -18,6 +18,7 @@ model Group {
   groupId      Int      @id @default(autoincrement())
   groupName    String   @unique
   groupMembers String[]
+  groupImage String
   createdBy    String   
   createdAt    DateTime @default(now())
 }
